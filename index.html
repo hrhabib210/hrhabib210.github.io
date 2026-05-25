@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>এইচ আর হাবিব | পেশাদার দলিল লেখক | সিংগাইর, মানিকগঞ্জ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1e3a5f;
+            --secondary: #c9a227;
+            --accent: #2c5282;
+            --light: #f7fafc;
+            --dark: #1a202c;
+            --text: #4a5568;
+        }
+
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            color: var(--text);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 1rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 50%, #1a365d 100%);
+            color: white;
+            padding: 160px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(201, 162, 39, 0.2);
+            border: 1px solid var(--secondary);
+            color: var(--secondary);
+            padding: 8px 25px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.3s;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background: #d4af37;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(201, 162, 39, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+
+        .btn-outline:hover {
+            border-color: white;
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background: white;
+            padding: 40px 0;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.08);
+            margin-top: -50px;
+            position: relative;
+            z-index: 2;
+            border-radius: 15px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            text-align: center;
+            gap: 30px;
+        }
+
+        .stat-item h3 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .stat-item p {
+            color: var(--text);
+            font-size: 0.95rem;
+            margin-top: 5px;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.4rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--text);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .title-underline {
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 20px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Services */
+        .services {
+            background: var(--light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 12px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+            transition: all 0.3s;
+            border-bottom: 4px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            border-bottom-color: var(--secondary);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 1.8rem;
+            color: white;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: var(--text);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Document Types */
+        .doc-types {
+            background: white;
+        }
+
+        .doc-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .doc-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 25px;
+            background: var(--light);
+            border-radius: 10px;
+            transition: all 0.3s;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .doc-item:hover {
+            background: white;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            transform: translateX(5px);
+        }
+
+        .doc-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .doc-content h4 {
+            color: var(--primary);
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .doc-content p {
+            color: var(--text);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Pricing */
+        .pricing {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+        }
+
+        .pricing .section-title h2,
+        .pricing .section-title p {
+            color: white;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .pricing-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s;
+        }
+
+        .pricing-card:hover {
+            transform: scale(1.05);
+            background: rgba(255,255,255,0.15);
+        }
+
+        .pricing-card.featured {
+            background: rgba(255,255,255,0.2);
+            border: 2px solid var(--secondary);
+            position: relative;
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 5px 25px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 25px;
+        }
+
+        .price span {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.7);
+            font-weight: 400;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .pricing-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.95rem;
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+        /* Process */
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 30px;
+            position: relative;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 60px;
+            right: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--secondary), var(--primary));
+            z-index: 0;
+        }
+
+        .step {
+            text-align: center;
+            flex: 1;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border: 4px solid var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 0 auto 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .step h4 {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .step p {
+            color: var(--text);
+            font-size: 0.9rem;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: var(--light);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--secondary);
+            opacity: 0.3;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text);
+            margin-bottom: 25px;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .author-info h5 {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .author-info p {
+            color: var(--text);
+            font-size: 0.85rem;
+        }
+
+        /* Contact */
+        .contact-section {
+            background: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--light);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .contact-detail h4 {
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .contact-detail p {
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+
+        .contact-form {
+            background: var(--light);
+            padding: 40px;
+            border-radius: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-family: 'Hind Siliguri', sans-serif;
+            font-size: 1rem;
+            color: var(--dark);
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Hind Siliguri', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(30, 58, 95, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: rgba(255,255,255,0.7);
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand p {
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .footer-links h4 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 25px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+                color: white;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .services-grid,
+            .pricing-grid,
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .doc-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-steps {
+                flex-direction: column;
+            }
+
+            .process-steps::before {
+                display: none;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <span class="logo-icon">📜</span>
+                    <span>এইচ আর হাবিব</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#home">হোম</a></li>
+                    <li><a href="#services">সার্ভিস</a></li>
+                    <li><a href="#documents">দলিলের ধরন</a></li>
+                    <li><a href="#pricing">মূল্য</a></li>
+                    <li><a href="#process">প্রক্রিয়া</a></li>
+                    <li><a href="#contact">যোগাযোগ</a></li>
+                </ul>
+                <div class="mobile-menu">☰</div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">✓ সিংগাইর, মানিকগঞ্জ</div>
+                <h1>এইচ আর হাবিব<br>পেশাদার দলিল লেখক</h1>
+                <p>সিংগাইর সাব-রেজিস্ট্রার অফিসে আস্থার সাথে ১২+ বছর ধরে সকল প্রকার দলিল, চুক্তিপত্র এবং আইনি ডকুমেন্ট তৈরির সেবা প্রদান করছি।</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">দলিল তৈরি করুন</a>
+                    <a href="tel:01825-409522" class="btn btn-outline">📞 সরাসরি কল করুন</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <div class="container">
+        <div class="stats-bar fade-up">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>১৫০০+</h3>
+                    <p>সম্পন্ন দলিল</p>
+                </div>
+                <div class="stat-item">
+                    <h3>১২+</h3>
+                    <p>বছরের অভিজ্ঞতা</p>
+                </div>
+                <div class="stat-item">
+                    <h3>৯৯%</h3>
+                    <p>সন্তুষ্ট ক্লায়েন্ট</p>
+                </div>
+                <div class="stat-item">
+                    <h3>২৪ ঘণ্টা</h3>
+                    <p>দ্রুত সেবা</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services -->
+    <section class="section services" id="services">
+        <div class="container">
+            <div class="section-title fade-up">
+                <h2>আমার সার্ভিস</h2>
+                <p>সকল প্রকার আইনি দলিল ও ডকুমেন্টেশন সেবা একই ছাদের নিচে</p>
+                <div class="title-underline"></div>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-up">
+                    <div class="service-icon">🏠</div>
+                    <h3>জমি ও সম্পত্তি দলিল</h3>
+                    <p>সাফ কবলা, খরিদা, বিক্রয়, বন্টন, হেবা, ওয়াকফ, দানপত্র সকল প্রকার দলিল তৈরি ও রেজিস্ট্রেশন সহায়তা।</p>
+                </div>
+                <div class="service-card fade-up">
+                    <div class="service-icon">📝</div>
+                    <h3>চুক্তিপত্র তৈরি</h3>
+                    <p>বাণিজ্যিক চুক্তি, ভাড়া চুক্তি, কর্মচুক্তি, অংশীদারিত্ব চুক্তি, এনওসি এবং সকল প্রকার বৈধ চুক্তিপত্র।</p>
+                </div>
+                <div class="service-card fade-up">
+                    <div class="service-icon">⚖️</div>
+                    <h3>আইনি পরামর্শ</h3>
+                    <p>সম্পত্তি আইন, উত্তরাধিকার আইন, ভূমি আইন এবং দেওয়ানি আইন সংক্রান্ত পেশাদার পরামর্শ ও মামলা সহায়তা।</p>
+                </div>
+                <div class="service-card fade-up">
+                    <div class="service-icon">📋</div>
+                    <h3>রেজিস্ট্রেশন সেবা</h3>
+                    <p>সাব-রেজিস্ট্রার অফিসে দলিল রেজিস্ট্রেশন, মিউটেশন, খাজনা পরিশোধ এবং সকল সরকারি কাগজপত্র প্রক্রিয়াকরণ।</p>
+                </div>
+                <div class="service-card fade-up">
+                    <div class="service-icon">🔍</div>
+                    <h3>দলিল যাচাইকরণ</h3>
+                    <p>পুরাতন দলিল যাচাই, ভূমি রেকর্ড পরীক্ষা, পর্চা ও খতিয়ান যাচাই এবং জালিয়াতি সনাক্তকরণ সেবা।</p>
+                </div>
+                <div class="service-card fade-up">
+                    <div class="service-icon">📄</div>
+                    <h3>অন্যান্য ডকুমেন্ট</h3>
+                    <p>পাওয়ার অফ অ্যাটর্নি, উইল, এফিডেভিট, বায়নামা, নোটারি পাবলিক এবং সকল প্রকার আইনি ডকুমেন্ট তৈরি।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Document Types -->
+    <section class="section doc-types" id="documents">
+        <div class="container">
+            <div class="section-title fade-up">
+                <h2>দলিলের ধরন</h2>
+                <p>আমি যে সকল দলিল তৈরি করতে পারি</p>
+                <div class="title-underline"></div>
+            </div>
+            <div class="doc-grid">
+                <div class="doc-item fade-up">
+                    <div class="doc-icon">📜</div>
+                    <div class="doc-content">
+                        <h4>সাফ কবলা (Sale Deed)</h4>
+                        <p>জমি বা সম্পত্তি ক্রয়-বিক্রয়ের জন্য আইনগত দলিল। সম্পূর্ণ আইনি ভাষায় প্রস্তুত এবং রেজিস্ট্রেশনের জন্য উপযোগী।</p>
+                    </div>
+                </div>
+                <div class="doc-item fade-up">
+                    <div class="doc-icon">🤝</div>
+                    <div class="doc-content">
+                        <h4>বায়নামা (Agreement)</h4>
+                        <p>জমি বা সম্পত্তি ক্রয়ের পূর্বে বায়না চুক্তি। অগ্রিম টাকা প্রদান এবং সময়মত দলিল রেজিস্ট্রেশনের শর্তাবলী সংযুক্ত।</p>
+                    </div>
+                </div>
+                <div class="doc-item fade-up">
+                    <div class="doc-icon">🎁</div>
+                    <div class="doc-content">
+                        <h4>হেবা দলিল (Gift Deed)</h4>
+                        <p>পরিবারের সদস্যদের মধ্যে সম্পত্তি হস্তান্তরের জন্য হেবা দলিল। কর সুবিধা ও আইনি বৈধতা নিশ্চিত।</p>
+                    </div>
+                </div>
+                <div class="doc-item fade-up">
+                    <div class="doc-icon">⚰️</div>
+                    <div class="doc-content">
+                        <h4>উইল (Will/Testament)</h4>
+                        <p>মৃত্যুর পর সম্পত্তি বণ্টনের জন্য উইল তৈরি। নিজের ইচ্ছানুযায়ী সম্পত্তি বণ্টনের নিশ্চয়তা।</p>
+                    </div>
+                </div>
+                <div class="doc-item fade-up">
+                    <div class="doc-icon">🏛️</div>
+                    <div class="doc-content">
+                        <h4>ওয়াকফ দলিল</h4>
+                        <p>ধর্মীয় ও সামাজিক কাজে সম্পত্তি উৎসর্গের জন্য ওয়াকফ দলিল। মসজিদ, মাদ্রাসা বা অন্য প্রতিষ্ঠানের জন্য উপযোগী।</p>
+                    </div>
+                </div>
+                <div class="doc-item fade-up">
+                    <div class="doc-icon">📊</div>
+                    <div class="doc-content">
+                        <h4>বন্টন দলিল (Partition Deed)</h4>
+                        <p>যৌথ সম্পত্তি ভাগ করে নেওয়ার জন্য বন্টন দলিল। সকল পক্ষের সম্মতিতে ন্যায্য বণ্টন নিশ্চিত।</p>
+                    </div>
+                </div>
+                <div class="doc-item fade-up">
+                    <div class="doc-icon">🔑</div>
+                    <div class="doc-content">
+                        <h4>ভাড়া চুক্তি (Lease Deed)</h4>
+                        <p>বাসা, দোকান বা জমি ভাড়ার জন্য পেশাদারি চুক্তিপত্র। ভাড়াটিয়া ও ভাড়াদার উভয়ের অধিকার সংরক্ষিত।</p>
+                    </div>
+                </div>
+                <div class="doc-item fade-up">
+                    <div class="doc-icon">✍️</div>
+                    <div class="doc-content">
+                        <h4>পাওয়ার অফ অ্যাটর্নি</h4>
+                        <p>অন্য ব্যক্তিকে আইনগত কাজ করার অনুমতিপত্র। সাধারণ বা বিশেষ ক্ষমতাবলী অনুযায়ী তৈরি।</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section pricing" id="pricing">
+        <div class="container">
+            <div class="section-title fade-up">
+                <h2>সার্ভিস মূল্য</h2>
+                <p>সাশ্রয়ী মূল্যে পেশাদারি সেবা</p>
+                <div class="title-underline"></div>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card fade-up">
+                    <h3>সাধারণ দলিল</h3>
+                    <div class="price">আলোচনা<br><span>সাপেক্ষে</span></div>
+                    <ul class="pricing-features">
+                        <li>✓ সাফ কবলা, হেবা</li>
+                        <li>✓ কাগজপত্র যাচাই</li>
+                        <li>✓ দ্রুত ডেলিভারি</li>
+                        <li>✓ ফ্রি পরামর্শ</li>
+                        <li>— রেজিস্ট্রেশন সহায়তা</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline" style="width: 100%;">যোগাযোগ করুন</a>
+                </div>
+                <div class="pricing-card featured fade-up">
+                    <div class="popular-badge">সবচেয়ে জনপ্রিয়</div>
+                    <h3>জটিল দলিল</h3>
+                    <div class="price">আলোচনা<br><span>সাপেক্ষে</span></div>
+                    <ul class="pricing-features">
+                        <li>✓ বন্টন, ওয়াকফ, উইল</li>
+                        <li>✓ সম্পূর্ণ যাচাইকরণ</li>
+                        <li>✓ আইনি পরামর্শ</li>
+                        <li>✓ রেজিস্ট্রেশন সহায়তা</li>
+                        <li>— ফলো-আপ সেবা</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary" style="width: 100%;">যোগাযোগ করুন</a>
+                </div>
+                <div class="pricing-card fade-up">
+                    <h3>প্রিমিয়াম প্যাকেজ</h3>
+                    <div class="price">আলোচনা<br><span>সাপেক্ষে</span></div>
+                    <ul class="pricing-features">
+                        <li>✓ সকল প্রকার দলিল</li>
+                        <li>✓ সম্পূর্ণ যাচাইকরণ</li>
+                        <li>✓ আইনি পরামর্শ</li>
+                        <li>✓ রেজিস্ট্রেশন সহায়তা</li>
+                        <li>✓ ফলো-আপ সেবা</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline" style="width: 100%;">যোগাযোগ করুন</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="section" id="process">
+        <div class="container">
+            <div class="section-title fade-up">
+                <h2>কাজের প্রক্রিয়া</h2>
+                <p>কীভাবে আমি আপনার দলিল তৈরি করি</p>
+                <div class="title-underline"></div>
+            </div>
+            <div class="process-steps fade-up">
+                <div class="step">
+                    <div class="step-number">১</div>
+                    <h4>যোগাযোগ</h4>
+                    <p>আমার সাথে ফোন বা ফর্মের মাধ্যমে যোগাযোগ করুন এবং আপনার প্রয়োজনীয়তা জানান</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">২</div>
+                    <h4>কাগজপত্র যাচাই</h4>
+                    <p>আমি আপনার সকল কাগজপত্র যাচাই করে দলিলের প্রস্তুতি নিই</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">৩</div>
+                    <h4>দলিল তৈরি</h4>
+                    <p>আইনি বিশেষজ্ঞ দ্বারা সঠিক ভাষায় দলিল প্রস্তুত করা হয়</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">৪</div>
+                    <h4>ডেলিভারি</h4>
+                    <p>দ্রুততম সময়ে সম্পূর্ণ দলিল আপনাকে হস্তান্তর করা হয়</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title fade-up">
+                <h2>ক্লায়েন্টদের মতামত</h2>
+                <p>যারা আমার সেবা নিয়ে সন্তুষ্ট</p>
+                <div class="title-underline"></div>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card fade-up">
+                    <p class="testimonial-text">অত্যন্ত দ্রুত এবং নির্ভরযোগ্য সেবা। আমার জমির সাফ কবলা মাত্র ২ দিনে তৈরি হয়ে গেল। সঠিক তথ্য ও পেশাদারি আচরণে আমি অভিভূত।</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ক</div>
+                        <div class="author-info">
+                            <h5>কামরুল ইসলাম</h5>
+                            <p>ব্যবসায়ী, সিংগাইর</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-up">
+                    <p class="testimonial-text">বাড়ি ভাড়ার চুক্তিপত্র তৈরি করেছিলাম। খুবই সুন্দরভাবে সব শর্ত লিখে দিয়েছেন। এখন আর কোনো ঝামেলা হবে না। ধন্যবাদ হাবিব সাহেব!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">র</div>
+                        <div class="author-info">
+                            <h5>রহিমা বেগম</h5>
+                            <p>শিক্ষক, মানিকগঞ্জ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-up">
+                    <p class="testimonial-text">আমার পুরাতন দলিলে সমস্যা ছিল। উনি যাচাই করে সঠিক সমাধান দিয়েছেন। মিউটেশনের কাজও সহজ করে দিয়েছেন। সত্যিই কৃতজ্ঞ।</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ম</div>
+                        <div class="author-info">
+                            <h5>মোহাম্মদ আলী</h5>
+                            <p>কৃষক, সিংগাইর</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <div class="section-title fade-up">
+                <h2>যোগাযোগ করুন</h2>
+                <p>আপনার দলিল তৈরির জন্য আজই যোগাযোগ করুন</p>
+                <div class="title-underline"></div>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info fade-up">
+                    <h3>এইচ আর হাবিবের তথ্য</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-detail">
+                            <h4>ঠিকানা</h4>
+                            <p>সাব-রেজিস্ট্রার অফিস, সিংগাইর, মানিকগঞ্জ</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-detail">
+                            <h4>ফোন</h4>
+                            <p>০১৮২৫-৪০৯৫২২</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-detail">
+                            <h4>ইমেইল</h4>
+                            <p>hr.habib210@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">🕐</div>
+                        <div class="contact-detail">
+                            <h4>কার্যালয়ের সময়</h4>
+                            <p>শনি - বৃহস্পতি: সকাল ৯টা - বিকাল ৫টা<br>শুক্রবার: বন্ধ</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">💬</div>
+                        <div class="contact-detail">
+                            <h4>হোয়াটসঅ্যাপ</h4>
+                            <p>০১৮২৫-৪০৯৫২২ (চ্যাট করুন)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form fade-up">
+                    <form onsubmit="event.preventDefault(); alert('ধন্যবাদ! এইচ আর হাবিব শীঘ্রই আপনার সাথে যোগাযোগ করবেন।');">
+                        <div class="form-group">
+                            <label>আপনার নাম *</label>
+                            <input type="text" placeholder="পূর্ণ নাম লিখুন" required>
+                        </div>
+                        <div class="form-group">
+                            <label>ফোন নম্বর *</label>
+                            <input type="tel" placeholder="০১XXXXXXXXX" required>
+                        </div>
+                        <div class="form-group">
+                            <label>দলিলের ধরন *</label>
+                            <select required>
+                                <option value="">দলিলের ধরন বেছে নিন</option>
+                                <option value="saf">সাফ কবলা</option>
+                                <option value="bayna">বায়নামা</option>
+                                <option value="gift">হেবা দলিল</option>
+                                <option value="will">উইল</option>
+                                <option value="wakf">ওয়াকফ দলিল</option>
+                                <option value="partition">বন্টন দলিল</option>
+                                <option value="lease">ভাড়া চুক্তি</option>
+                                <option value="power">পাওয়ার অফ অ্যাটর্নি</option>
+                                <option value="other">অন্যান্য</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>বিস্তারিত বিবরণ</label>
+                            <textarea placeholder="আপনার প্রয়োজনীয়তা বিস্তারিত লিখুন..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">মেসেজ পাঠান</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>📜 এইচ আর হাবিব</h3>
+                    <p>সিংগাইর সাব-রেজিস্ট্রার অফিসে ১২+ বছরের অভিজ্ঞতায় আমি প্রদান করছি নির্ভরযোগ্য আইনি দলিল ও পরামর্শ সেবা। আপনার সম্পত্তি ও অধিকার আমার অগ্রাধিকার।</p>
+                </div>
+                <div class="footer-links">
+                    <h4>দ্রুত লিংক</h4>
+                    <ul>
+                        <li><a href="#home">হোম</a></li>
+                        <li><a href="#services">সার্ভিস</a></li>
+                        <li><a href="#pricing">মূল্য</a></li>
+                        <li><a href="#contact">যোগাযোগ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>সার্ভিস</h4>
+                    <ul>
+                        <li><a href="#">সাফ কবলা</a></li>
+                        <li><a href="#">হেবা দলিল</a></li>
+                        <li><a href="#">চুক্তিপত্র</a></li>
+                        <li><a href="#">আইনি পরামর্শ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>যোগাযোগ</h4>
+                    <ul>
+                        <li><a href="tel:01825-409522">০১৮২৫-৪০৯৫২২</a></li>
+                        <li><a href="mailto:hr.habib210@gmail.com">hr.habib210@gmail.com</a></li>
+                        <li><a href="#">সিংগাইর, মানিকগঞ্জ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ২০২৫ এইচ আর হাবিব - পেশাদার দলিল লেখক। সর্বস্বত্ব সংরক্ষিত। | সিংগাইর, মানিকগঞ্জ</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 2px 30px rgba(0,0,0,0.3)';
+            } else {
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.2)';
+            }
+        });
+    </script>
+</body>
+</html>
