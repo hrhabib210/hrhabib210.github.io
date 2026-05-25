@@ -19,6 +19,7 @@
             --light: #f7fafc;
             --dark: #1a202c;
             --text: #4a5568;
+            --whatsapp: #25D366;
         }
 
         body {
@@ -159,7 +160,9 @@
             font-weight: 600;
             font-size: 1.05rem;
             transition: all 0.3s;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
             border: none;
             cursor: pointer;
         }
@@ -184,6 +187,17 @@
         .btn-outline:hover {
             border-color: white;
             background: rgba(255,255,255,0.1);
+        }
+
+        .btn-whatsapp {
+            background: var(--whatsapp);
+            color: white;
+        }
+
+        .btn-whatsapp:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
         }
 
         /* Stats Bar */
@@ -648,10 +662,10 @@
             resize: vertical;
         }
 
-        .submit-btn {
+        .whatsapp-btn {
             width: 100%;
             padding: 16px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
+            background: linear-gradient(135deg, #25D366, #128C7E);
             color: white;
             border: none;
             border-radius: 8px;
@@ -660,11 +674,15 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
 
-        .submit-btn:hover {
+        .whatsapp-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(30, 58, 95, 0.3);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
         }
 
         /* Footer */
@@ -722,6 +740,30 @@
             padding-top: 25px;
             text-align: center;
             font-size: 0.9rem;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: all 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
         }
 
         /* Animations */
@@ -787,6 +829,11 @@
 </head>
 <body>
 
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/8801825409522" class="whatsapp-float" target="_blank" title="WhatsApp-এ মেসেজ করুন">
+        💬
+    </a>
+
     <!-- Header -->
     <header>
         <div class="container">
@@ -818,6 +865,7 @@
                 <div class="hero-buttons">
                     <a href="#contact" class="btn btn-primary">দলিল তৈরি করুন</a>
                     <a href="tel:01825-409522" class="btn btn-outline">📞 সরাসরি কল করুন</a>
+                    <a href="https://wa.me/8801825409522" class="btn btn-whatsapp" target="_blank">💬 WhatsApp করুন</a>
                 </div>
             </div>
         </div>
@@ -1021,7 +1069,7 @@
                 <div class="step">
                     <div class="step-number">১</div>
                     <h4>যোগাযোগ</h4>
-                    <p>আমার সাথে ফোন বা ফর্মের মাধ্যমে যোগাযোগ করুন এবং আপনার প্রয়োজনীয়তা জানান</p>
+                    <p>আমার সাথে ফোন বা WhatsApp-এ যোগাযোগ করুন এবং আপনার প্রয়োজনীয়তা জানান</p>
                 </div>
                 <div class="step">
                     <div class="step-number">২</div>
@@ -1130,45 +1178,48 @@
                     </div>
 
                     <div class="contact-item">
-                        <div class="contact-icon">💬</div>
+                        <div class="contact-icon" style="background: #d4edda; color: #25D366;">💬</div>
                         <div class="contact-detail">
-                            <h4>হোয়াটসঅ্যাপ</h4>
-                            <p>০১৮২৫-৪০৯৫২২ (চ্যাট করুন)</p>
+                            <h4>WhatsApp</h4>
+                            <p><a href="https://wa.me/8801825409522" target="_blank" style="color: #25D366; text-decoration: none; font-weight: 600;">০১৮২৫-৪০৯৫২২ (চ্যাট করুন)</a></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="contact-form fade-up">
-                    <form onsubmit="event.preventDefault(); alert('ধন্যবাদ! এইচ আর হাবিব শীঘ্রই আপনার সাথে যোগাযোগ করবেন।');">
-                        <div class="form-group">
-                            <label>আপনার নাম *</label>
-                            <input type="text" placeholder="পূর্ণ নাম লিখুন" required>
-                        </div>
-                        <div class="form-group">
-                            <label>ফোন নম্বর *</label>
-                            <input type="tel" placeholder="০১XXXXXXXXX" required>
-                        </div>
-                        <div class="form-group">
-                            <label>দলিলের ধরন *</label>
-                            <select required>
-                                <option value="">দলিলের ধরন বেছে নিন</option>
-                                <option value="saf">সাফ কবলা</option>
-                                <option value="bayna">বায়নামা</option>
-                                <option value="gift">হেবা দলিল</option>
-                                <option value="will">উইল</option>
-                                <option value="wakf">ওয়াকফ দলিল</option>
-                                <option value="partition">বন্টন দলিল</option>
-                                <option value="lease">ভাড়া চুক্তি</option>
-                                <option value="power">পাওয়ার অফ অ্যাটর্নি</option>
-                                <option value="other">অন্যান্য</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>বিস্তারিত বিবরণ</label>
-                            <textarea placeholder="আপনার প্রয়োজনীয়তা বিস্তারিত লিখুন..."></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">মেসেজ পাঠান</button>
-                    </form>
+                    <h3 style="color: var(--primary); margin-bottom: 20px; font-size: 1.3rem;">📩 দ্রুত যোগাযোগ</h3>
+                    <p style="color: var(--text); margin-bottom: 25px; font-size: 0.95rem;">নিচের তথ্য পূরণ করে WhatsApp-এ মেসেজ পাঠান। আমি শীঘ্রই উত্তর দেব।</p>
+                    
+                    <div class="form-group">
+                        <label>আপনার নাম *</label>
+                        <input type="text" id="waName" placeholder="পূর্ণ নাম লিখুন">
+                    </div>
+                    <div class="form-group">
+                        <label>ফোন নম্বর *</label>
+                        <input type="tel" id="waPhone" placeholder="০১XXXXXXXXX">
+                    </div>
+                    <div class="form-group">
+                        <label>দলিলের ধরন *</label>
+                        <select id="waType">
+                            <option value="">দলিলের ধরন বেছে নিন</option>
+                            <option value="সাফ কবলা">সাফ কবলা</option>
+                            <option value="বায়নামা">বায়নামা</option>
+                            <option value="হেবা দলিল">হেবা দলিল</option>
+                            <option value="উইল">উইল</option>
+                            <option value="ওয়াকফ দলিল">ওয়াকফ দলিল</option>
+                            <option value="বন্টন দলিল">বন্টন দলিল</option>
+                            <option value="ভাড়া চুক্তি">ভাড়া চুক্তি</option>
+                            <option value="পাওয়ার অফ অ্যাটর্নি">পাওয়ার অফ অ্যাটর্নি</option>
+                            <option value="অন্যান্য">অন্যান্য</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>বিস্তারিত বিবরণ</label>
+                        <textarea id="waMessage" placeholder="আপনার প্রয়োজনীয়তা বিস্তারিত লিখুন..."></textarea>
+                    </div>
+                    <button onclick="sendWhatsApp()" class="whatsapp-btn">
+                        💬 WhatsApp-এ মেসেজ পাঠান
+                    </button>
                 </div>
             </div>
         </div>
@@ -1205,6 +1256,7 @@
                     <ul>
                         <li><a href="tel:01825-409522">০১৮২৫-৪০৯৫২২</a></li>
                         <li><a href="mailto:hr.habib210@gmail.com">hr.habib210@gmail.com</a></li>
+                        <li><a href="https://wa.me/8801825409522" target="_blank">WhatsApp: ০১৮২৫-৪০৯৫২২</a></li>
                         <li><a href="#">সিংগাইর, মানিকগঞ্জ</a></li>
                     </ul>
                 </div>
@@ -1216,6 +1268,23 @@
     </footer>
 
     <script>
+        // WhatsApp Message Function
+        function sendWhatsApp() {
+            const name = document.getElementById('waName').value;
+            const phone = document.getElementById('waPhone').value;
+            const type = document.getElementById('waType').value;
+            const message = document.getElementById('waMessage').value;
+
+            if (!name || !phone || !type) {
+                alert('দয়া করে নাম, ফোন নম্বর এবং দলিলের ধরন পূরণ করুন!');
+                return;
+            }
+
+            const text = `*নতুন ক্লায়েন্ট যোগাযোগ*%0A%0A👤 *নাম:* ${name}%0A📞 *ফোন:* ${phone}%0A📜 *দলিলের ধরন:* ${type}%0A📝 *বিস্তারিত:* ${message || 'কোনো বিশেষ বিবরণ দেওয়া হয়নি'}%0A%0A🔗 hrhabib210.github.io`;
+
+            window.open(`https://wa.me/8801825409522?text=${text}`, '_blank');
+        }
+
         // Scroll Animation
         const observerOptions = {
             threshold: 0.1,
